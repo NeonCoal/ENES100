@@ -1,25 +1,25 @@
 #include "Arduino.h"
 #include <Enes100.h>
 
-// Left motor (back, white wire)
-const int ENA = 5;
-const int IN1 = 6;
-const int IN2 = 7;
+// white wire
+const int ENA = 32;
+const int IN1 = 30; // set to high
+const int IN2 = 28;
 
-// Right motor (back, green wire)
-const int IN3 = 2;
-const int IN4 = 3;
-const int ENB = 4;
+// green wire
+const int IN3 = 26; // set to high
+const int IN4 = 24;
+const int ENB = 22;
 
 // Right motor (front, blue wire)
-const int ENA_2 = 13;
-const int IN1_2 = 12;
-const int IN2_2 = 11;
+const int ENA_2 = 23;
+const int IN1_2 = 25;
+const int IN2_2 = 27;
 
 // Left motor (front, blue wire)
-const int ENB_2 = 8;
-const int IN3_2 = 9;
-const int IN4_2 = 10;
+const int IN3_2 = 29;
+const int IN4_2 = 31;
+const int ENB_2 = 33;
 
 int trigPin = 22;
 int echoPin = 23;
@@ -60,9 +60,9 @@ void setup() {
     pinMode(IN3_2, OUTPUT);
     pinMode(IN4_2, OUTPUT);
 
-    pinMode(trigPin, OUTPUT); // Sets the trigPin as an Output
-    pinMode(echoPin, INPUT); // Sets the echoPin as an Input
-    Serial.begin(9600); // Starts the serial communication
+    // pinMode(trigPin, OUTPUT); // Sets the trigPin as an Output
+    // pinMode(echoPin, INPUT); // Sets the echoPin as an Input
+    // Serial.begin(9600); // Starts the serial communication
 }
 
 //repeats forever unless end is specified
@@ -71,11 +71,10 @@ void loop() {
     // ultraSensor();
 
     // Turning milestone
-    turn(0);
-    turn(PI / 2);
-    turn(PI);
-    turn(3 * PI / 2);
-    turn(0);
+    motorLForward(255);
+    delay(1000);
+    stopOTV();
+    motorRForward(255);
 }
 
 void turn(float targetAngle) {
