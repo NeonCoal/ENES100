@@ -143,42 +143,42 @@ void motorLForward(int speed) {
 
 // Check the rest of the functions from here onward
 void motorLBackward(int speed) {
-    digitalWrite(IN1, LOW); // control motor A spins counterclockwise
-    digitalWrite(IN2, HIGH);  // control motor A spins counterclockwise
+    digitalWrite(IN1, LOW);
+    digitalWrite(IN2, HIGH);
 
     analogWrite(ENA, speed);
     analogWrite(ENB, speed);
 
-    digitalWrite(IN3_2, LOW);  // control motor A spins counterclockwise
-    digitalWrite(IN4_2, HIGH); // control motor A spins counterclockwise
+    digitalWrite(IN3_2, LOW);
+    digitalWrite(IN4_2, HIGH);
 
     analogWrite(ENA_2, speed);
     analogWrite(ENB_2, speed);
 }
 
 void motorRForward(int speed) {
-    digitalWrite(IN3, HIGH); // control motor A spins clockwise
-    digitalWrite(IN4, LOW);  // control motor A spins clockwise
+    digitalWrite(IN3, HIGH);
+    digitalWrite(IN4, LOW);
 
     analogWrite(ENA, speed);
     analogWrite(ENB, speed);
 
-    digitalWrite(IN1_2, HIGH);  // control motor A spins clockwise
-    digitalWrite(IN2_2, LOW); // control motor A spins clockwise
+    digitalWrite(IN1_2, HIGH);
+    digitalWrite(IN2_2, LOW);
 
     analogWrite(ENA_2, speed);
     analogWrite(ENB_2, speed);
 }
 
 void motorRBackward(int speed) {
-    digitalWrite(IN3, LOW); // control motor A spins counterclockwise
-    digitalWrite(IN4, HIGH);  // control motor A spins counterclockwise
+    digitalWrite(IN3, LOW);
+    digitalWrite(IN4, HIGH);
 
     analogWrite(ENA, speed);
     analogWrite(ENB, speed);
 
-    digitalWrite(IN1_2, LOW);  // control motor A spins counterclockwise
-    digitalWrite(IN2_2, HIGH); // control motor A spins counterclockwise
+    digitalWrite(IN1_2, LOW);
+    digitalWrite(IN2_2, HIGH);
 
     analogWrite(ENA_2, speed);
     analogWrite(ENB_2, speed);
@@ -195,20 +195,20 @@ void rotateCCW() {
 }
 
 void stopOTV() {
-    digitalWrite(IN1, LOW); // control motor A stops
-    digitalWrite(IN2, LOW);  // control motor A stops
+    digitalWrite(IN1, LOW);
+    digitalWrite(IN2, LOW);
 
-    digitalWrite(IN3, LOW); // control motor B stops
-    digitalWrite(IN4, LOW);  // control motor B stops
+    digitalWrite(IN3, LOW);
+    digitalWrite(IN4, LOW);
 
     analogWrite(ENA, 0);
     analogWrite(ENB, 0);
 
-    digitalWrite(IN1_2, LOW);  // control motor A stops
-    digitalWrite(IN2_2, LOW); // control motor A stops
+    digitalWrite(IN1_2, LOW);
+    digitalWrite(IN2_2, LOW);
 
-    digitalWrite(IN3_2, LOW);  // control motor B stops
-    digitalWrite(IN4_2, LOW); // control motor B stops
+    digitalWrite(IN3_2, LOW);
+    digitalWrite(IN4_2, LOW);
 
     analogWrite(ENA_2, 0);
     analogWrite(ENB_2, 0);
